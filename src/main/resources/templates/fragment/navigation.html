@@ -1,0 +1,5 @@
+<nav class="light-blue lighten-1" role="navigation" th:fragment="navFragment">
+    <ul sec:authorize="isAuthenticated()" class="right hide-on-med-and-down">
+        <li><a href="/logout" th:text="#{logout.link.text}"></a></li>
+    </ul>
+</nav>

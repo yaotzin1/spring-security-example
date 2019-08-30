@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title th:text="#{login.page.title}"></title>
+    <dif th:include="fragment/header :: headerFragment" th:remove="tag"></dif>
+</head>
+<body>
+    <div th:replace="fragment/navigation :: navFragment"></div>
+    <div class="valign-wrapper row login-box">
+        <div class="col card hoverable s10 pull-s1 m6 pull-m3 l4 pull-l4">
+            <form th:action="@{/login}" method="post">
+                <div class="card-content">
+                    <span class="card-title" th:text="#{login.page.credentials}"></span>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <label for="user" th:text="#{login.page.username}"></label>
+                            <input type="text" class="validate" name="username" id="user" />
+                        </div>
+                        <div class="input-field col s12">
+                            <label for="password" th:text="#{login.page.password}"></label>
+                            <input type="password" class="validate" name="password" id="password" />
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action right-align">
+                    <input type="reset" id="reset" class="btn-flat grey-text waves-effect">
+                    <input type="submit" class="btn orange waves-effect waves-light" value="Login">
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+<dif th:include="fragment/javascripts :: javascriptsFragment" th:remove="tag"></dif>
+</body>
+</html>
